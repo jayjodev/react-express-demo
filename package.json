@@ -1,0 +1,11 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "A playground for mini project based create-react-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://solidware.io:3222/Yongjoon/mini-project.git"
+  },
+  "author": "Yongjoon Cho <yjcho@solidware.io>",
+  "license": "UNLICENSED"
+}
