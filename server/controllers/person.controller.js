@@ -8,7 +8,6 @@ module.exports = (app) => {
     res.send(people);
   });
 
-
   // Get Add People
   app.post("/api/person", async (req, res) => {
     const { name } = req.body;
@@ -22,7 +21,6 @@ module.exports = (app) => {
       res.send(400, err);
     }
   });
-
   
   // Update person`s name
   app.put("/api/person/:id", async (req, res) => {

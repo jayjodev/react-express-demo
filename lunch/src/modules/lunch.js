@@ -12,6 +12,8 @@ export const FETCH_PEOPLE = 'FETCH_PEOPLE'
 export const fetchPeople = () => {
   return (dispatch, getState) => {
 
+    
+
   }
 }
 
@@ -26,6 +28,7 @@ export const actions = {
 function people (state = [], action) {
   switch (action.type) {
     case FETCH_PEOPLE:
+      return {...state, }
     default:
       return state
   }
