@@ -39,3 +39,8 @@ Tech Stack
     ```code
     $ docker-compose -f docker-compose.prod.yml up -d --build
     ```
+
+4. Test IP
+    ```code
+    161.35.63.163
+    ```
