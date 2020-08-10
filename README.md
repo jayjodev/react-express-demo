@@ -23,9 +23,9 @@ Let's randomly divide people for lunch time.
 
 Tech Stack
 
-1. React-Redux
-2. Express
-3. MongoDB
+- React-Redux
+- Express
+- MongoDB
 
 1. Copy .env file
     ```code
