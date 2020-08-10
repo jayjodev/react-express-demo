@@ -1,0 +1,76 @@
+version: '3.7'
+services:
+  backend:
+    container_name: server
+    restart: always
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    env_file: .env
+    environment: 
+      - BACKEND_PORT=$BACKEND_PORT
+      - BACKEND_SECRET=$BACKEND_SECRET
+      - MONGO_DB=$MONGO_DB
+    # Add volumnes
+    volumes:
+      # NOT in production
+      # Inside container
+      - /server/node_modules
+      # Outside container
+      - ./server:/server
+    ports:
+      - "2018:2018"
+    depends_on:
+      - db
+    networks:
+      - solidware
+      
+  app:
+    container_name: app
+    restart: always
+    stdin_open: true 
+    build:
+      context: ./app
+      dockerfile: Dockerfile.prod
+    env_file: .env
+    environment: 
+        - REACT_APP_SERVER=$REACT_APP_SERVER
+    # Add volumnes
+    volumes:
+      # NOT in production
+      # Inside container
+      - /app/node_modules
+      # Outside container
+      - ./app:/app
+    ports:
+        - "3000:3000"
+    networks:
+      - solidware
+          
+  nginx:
+    container_name: ngnix
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - solidware
+
+  db:
+    container_name: db
+    restart: always
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - solidware
+  
+volumes:
+  mongo_data:
+    
+networks:
+  solidware:

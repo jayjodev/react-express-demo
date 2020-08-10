@@ -22,3 +22,20 @@ Let's randomly divide people for lunch time.
 
 
 Tech Stack
+
+1. React-Redux
+2. Express
+3. MongoDB
+
+1. Copy .env file
+    ```code
+    $ cp .env.docker .env
+    ```
+2. Build the project.
+    ```code
+    $ docker-compose up -d --build
+    ```
+3. Build the project for Production : This is NOT REAL PRODUCTION. For test.
+    ```code
+    $ docker-compose -f docker-compose.prod.yml up -d --build
+    ```
