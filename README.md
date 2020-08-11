@@ -1,3 +1,28 @@
+Tech Stack
+
+- React-Redux
+- Express
+- MongoDB
+- Docker
+
+## Bulid Application
+1. Copy .env file
+    ```code
+    $ cp .env.docker .env
+    ```
+2. Build the project.
+    ```code
+    $ docker-compose up -d --build
+    ```
+3. Build the project for Production : This is NOT REAL PRODUCTION. For test.
+    ```code
+    $ docker-compose -f docker-compose.prod.yml up -d --build
+    ```
+4. Test IP
+    ```code
+    161.35.63.163
+    ```
+
 // Solidware Project
 
 Let's randomly divide people for lunch time.
@@ -20,27 +45,3 @@ Let's randomly divide people for lunch time.
       - Group cases : (2, 4), (3, 3), (4, 2)
       - members must be randomly assigned to each groups.
 
-
-Tech Stack
-
-- React-Redux
-- Express
-- MongoDB
-
-1. Copy .env file
-    ```code
-    $ cp .env.docker .env
-    ```
-2. Build the project.
-    ```code
-    $ docker-compose up -d --build
-    ```
-3. Build the project for Production : This is NOT REAL PRODUCTION. For test.
-    ```code
-    $ docker-compose -f docker-compose.prod.yml up -d --build
-    ```
-
-4. Test IP
-    ```code
-    161.35.63.163
-    ```
