@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
     networks:
-      - solidware
+      - react-express
       
   app:
     container_name: app
@@ -45,7 +45,7 @@ services:
     ports:
         - "3000:3000"
     networks:
-      - solidware
+      - react-express
           
   nginx:
     container_name: ngnix
@@ -56,7 +56,7 @@ services:
     depends_on:
       - app
     networks:
-      - solidware
+      - react-express
 
   db:
     container_name: db
@@ -67,10 +67,10 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - solidware
+      - react-express
   
 volumes:
   mongo_data:
     
 networks:
-  solidware:
+  react-express:
